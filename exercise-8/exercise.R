@@ -19,6 +19,7 @@ print(colnames(pulitzer))
 # Use 'str' to print what types of values are contained in each column
 # Did any value type surprise you? Why do you think they are that type?
 print(str(pulitzer))
+
 #Daily circulation is in characters!
 
 # Add a column in a dataframe called 'Pulitzer.Prize.Change` that contains the diffrence in changes
@@ -26,6 +27,9 @@ print(str(pulitzer))
 pulitzer <- mutate(pulitzer, Pulitzer.Prize.Change = Pulitzer.Prize.Winners.and.Finalists..2004.2014
                                                    - Pulitzer.Prize.Winners.and.Finalists..1990.2003)
 
+# Add a column that contains the diffrence in changes in Daily Circulation from 2004 to 2013
+pulitzer<- mutate(pulitzer, diff = Pulitzer.Prize.Winners.and.Finalists..2004.2014 
+                                 - Pulitzer.Prize.Winners.and.Finalists..1990.2003)
 
 # What publication gained the most pulitzer prizes from 2004-2014?
 # Be sure to use the pipe operator! 
